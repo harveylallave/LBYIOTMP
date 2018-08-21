@@ -2,6 +2,7 @@ body{
 	background: linear-gradient(#fff5e947, #052748);
 	position: relative;
 }
+
 #logs::-webkit-scrollbar {
     width: 1em;
 }
