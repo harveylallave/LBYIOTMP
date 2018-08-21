@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Fall Detector</title>
+
+    <!-- necessary file scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		body{    
+			background: linear-gradient(#fff5e947, #052748);
+			position: relative;
+		}
+		#logs::-webkit-scrollbar {
+			width: 1em;
+		}
+		 
+		#logs::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		}
+		 
+		#logs::-webkit-scrollbar-thumb {
+			background-color: #fdf6f659;
+			outline: 1px solid #f2f8ff47;
+		}
+
+		.pageContent{
+			top: 10%;
+			width: 100%;    
+			text-align: center;
+		}
+
+		#mainHeader{
+			color: whitesmoke;
+			text-align: center;
+			font-size: 5em;
+			font-family: monospace;
+		}
+
+
+		#logs{
+			width: 50%;
+			height: 50%;
+			background: rgba(243, 243, 243, 0.38);
+			/*color: #a54d2a;*/
+			font-size: 14pt;
+			margin-top: 5%;
+		}
+
+	</style>
+	
+	<script>
+	
+	
+		function displayLog(val) {
+			$('#logs').val(function(index, old) { return val + old; });
+		}
+
+		$(document).ready(function(){
+
+			$('#logs').on('click', function(e){
+				displayLog("\n o " + new Date().toLocaleString() + " - Fall Detected \n");
+			});
+
+		});
+
+	</script>
+	
+</head>
+
+<body>
+
+    <div class="pageContent">
+		<textarea id = "logs" readonly></textarea>
+	<h1 id = "mainHeader">FALL DETECTOR</h1>
+	</div>
+
+</body>
+
+</html>
