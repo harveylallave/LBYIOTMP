@@ -26,10 +26,10 @@ $(document).ready(function(){
 	function onConnect() {
 	// Once a connection has been made, make a subscription and send a message.
 		console.log("onConnect");
-		client.subscribe("/cloudmqtt");
-		message = new Paho.MQTT.Message("Hello CloudMQTT");
+		client.subscribe("/cloudmqtt");	// Topic
+		/*message = new Paho.MQTT.Message("Hello CloudMQTT");
 		message.destinationName = "/cloudmqtt";
-		client.send(message);
+		client.send(message);*/
 	}
 
 	function doFail(e){
@@ -49,8 +49,13 @@ $(document).ready(function(){
 		displayLog("\n o " + new Date().toLocaleString() + " - Fall Detected \n");
 	}
 	
-/*    $('#logs').on('click', function(e){
-        displayLog("\n o " + new Date().toLocaleString() + " - Fall Detected \n");
+/*	$('#logs').on('click', function(e){
+		
+		client.subscribe("/cloudmqtt");
+		message = new Paho.MQTT.Message("Hello CloudMQTT");
+		message.destinationName = "/cloudmqtt";
+		client.send(message);
+//        displayLog("\n o " + new Date().toLocaleString() + " - Fall Detected \n");
     });*/
 
 });
